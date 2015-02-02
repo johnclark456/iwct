@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Define Charset -->
+	<meta charset="utf-8" />
+	<!-- Page Title -->
+	<title>IWCT</title>
+
+	<!-- Responsive Metatag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=9" />-->
+
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+
+	<!-- Font icons -->
+	<link rel="stylesheet" href="css/vendors/fontello.min.css">
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="css/fontello-ie7.css" ><![endif]-->
+
+
+	<!-- bxSlider CSS file -->
+	<link href="js/vendors/bxslider/jquery.bxslider.css" rel="stylesheet" />
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/styles.min.css" />
+
+	<!-- Custom Media-Queties -->
+	<link rel="stylesheet" href="css/media-queries.min.css" />
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Media queries -->
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	
+	
+
+</head>
+
+
+<body data-ng-app="iwct">
+	<!-- begin Header -->
+	<header class="header-home" id="home" style="background: url('../img/background-trail.svg'); background-size: auto 100%;">
+
+		<iwct-navbar></iwct-navbar>
+		<!-- begin Slider -->
+		<div class="bannercontainer">
+			<ul class="bxslider front">
+				<li>
+					<img src="img_resp/Slider/slide03-medium.jpg" alt="//" srcset="img_resp/Slider/slide03-small.jpg 320w,img_resp/Slider/slide03-medium.jpg 640w,img_resp/Slider/slide03-large.jpg 1024w" />
+					<div>
+						<p>“working to prevent cruelty to animals”</p>
+					</div>
+				</li>
+
+				<li>
+					<img src="img_resp/Slider/slide02-medium.jpg" alt="//" srcset="img_resp/Slider/slide02-small.jpg 320w,img_resp/Slider/slide02-medium.jpg 640w,img_resp/Slider/slide02-large.jpg 1024w"/>
+					<div>
+						<p>“determined to end the horrors of the dog meat trade”</p>
+					</div>
+				</li>
+
+				<li>
+					<img src="img_resp/Slider/slide01-medium.jpg" alt="//" srcset="img_resp/Slider/slide01-small.jpg 320w,img_resp/Slider/slide01-medium.jpg 640w,img_resp/Slider/slide01-large.jpg 1024w"/>
+					<div>
+						<p>“passionate about Wildlife”</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- end Slider -->
+
+	</header>
+	<!--end Header -->
+
+
+	<!-- begin Content -->
+	<section class="section-home">
+		<article class="inverted" id="mission">
+			<h2 class="inverted">Mission</h2>
+			<h3 class="inverted">Our mission is to support and protect the welfare and rights of all animals</h3>
+			<a href="donate" class="btn btn-slider btn-mission" style="margin-left: auto;margin-right: auto;display: block;max-width:300px">Take action now</a>
+		</article>
+		<!-- begin About Us-->
+		<article class="about-us" id="about-us">
+			<div class="container">
+				<h2>Our Campaigns</h2>
+				<!--<h3>To support and protect the welfare and rights of all animals</h3>-->
+				<div class="row">
+					<div class="col-md-6">
+						<a href="philippines" class="donation-item">
+							<figure><img src="img/posterDog.jpg" alt="//">
+							</figure>
+							<div class="content">
+								<h4>Dogs in the Philippines</h4>
+								<p style="text-align:left">Ending the dog meat trade in the Philippines</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-6">
+						<a href="africa" class="donation-item">
+							<figure><img src="img/africanDog.jpg" alt="//">
+							</figure>
+							<div class="content">
+								<h4>African Wild Dogs</h4>
+								<p style="text-align:left">Saving the African Wild Dog</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</article>
+		<!-- end About Us-->
+
+		<!-- begin News -->
+		<article class="news" id="news">
+			<div class="container" style="background: url('../img/background-trail.svg');background-size: cover;">
+				<h2>News</h2>
+				<div data-ng-controller="newsController as ctrl">
+					<div class="row" data-ng-repeat="newsRow in filteredNews" data-ng-if="$index%2==0">
+						<div class="col-md-6" data-ng-repeat="i in [$index,$index+1]" data-ng-if="filteredNews[i]!=null" style="padding:50px">
+							<div class="item">
+								<div class="row" style="height:300px; max-height:50vw">
+									<div class="col-md-12">
+										<figure>
+											<a data-ng-href="news.php?tag={{filteredNews[i].tag}}">
+												<img data-ng-src="{{filteredNews[i].image}}-small.jpg" data-ng-srcset="{{filteredNews[i].image}}-small.jpg 320w, {{filteredNews[i].image}}-medium.jpg 640w, {{filteredNews[i].image}}-large.jpg 1024w" class="center-block news-img">
+											</a>
+										</figure>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<h3>{{filteredNews[i].title}}</h3>
+										<span class="subtitle">{{filteredNews[i].date}}</span>
+										<p>{{filteredNews[i].text | htmlToPlaintext | characters:250: false}}</p>
+									</div>
+								</div>
+								<div class="row">
+									<a data-ng-href="news.php?tag={{filteredNews[i].tag}}">
+										<button type="button" class="btn btn-default center-block">Read more</button>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<pager total-items="totalItems" data-ng-model="currentPage" max-size="maxSize" items-per-page="numPerPage"></pager>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<!-- end News -->
+
+		<article class="about-us" id="sponsors">
+			<div class="container">
+				<h2>About Us</h2>
+				<ul class="nav nav-tabs tabs-horizontal" role="tablist">
+					<li class="active">
+						<h3><a href="#patrons" role="tab" data-toggle="tab">Patrons</a></h3>
+					</li>
+					<li>
+						<h3><a href="#partners" role="tab" data-toggle="tab">Partners</a></h3>
+					</li>
+					<li>
+						<h3><a href="#people" role="tab" data-toggle="tab">People</a></h3>
+					</li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane active" id="patrons">
+						<div class="row patron">
+
+							<div class="col-md-4">
+								<!--<figure>-->
+								<img src="img/patrons/dench1.png" width=90% height=90%>
+								<!--</figure>-->
+							</div>
+							<div class="col-md-8">
+								<h3>Dame Judi Dench</h3>
+								<blockquote>
+									<i class="icon-quote"></i>
+									<p>I am delighted to become a patron of the International Wildlife Coalition Trust.</p>
+									<p>I am passionate about wildlife and the work that charities like IWCT are doing across the world to help the plight of animals suffering cruelty.</p>
+								</blockquote>
+							</div>
+
+
+						</div>
+
+						<div class="row patron">
+
+							<div class="col-md-4">
+								<!--<figure>-->
+								<img src="img/patrons/egan1.jpg" width=90% height=90%>
+								<!--</figure>-->
+							</div>
+							<div class="col-md-8">
+								<h3>Peter Egan</h3>
+								<blockquote>
+									<i class="icon-quote"></i>
+									<p>I am delighted to be a Patron of the International Wildlife Coalition Trust.</p>
+									<p>I have been involved in Animal Welfare for over twenty years and it never ceases to amaze me how cruel humans can be when it comes to the pain inflicted on those, our voiceless companions, with whom we share our wonderful planet. None more so,
+										I am sad to say, than when it comes to the appalling Dog Meat Trade. It is a trade which is frowned upon, in many cases, by the majority in those countries across Asia where it is practised.</p>
+									<p>It is thanks to the great work done by many charities in the region that attention is being brought to this vile trade, and moves are being made to try and stop it altogether. One such charity is IWCT. I'm glad to support it by being a patron.</p>
+								</blockquote>
+							</div>
+
+
+						</div>
+					</div>
+
+					<div class="tab-pane" id="partners">
+						<div class="row">
+							<div class="col-md-3 col-sm-6 about-icon">
+								<a href="http://www.dogstrust.org.uk/">
+									<img src="img/partners/dogs_trust.gif" style="padding:5%">
+								</a>
+								<h4>Dogs Trust</h4>
+								<p>Founded in 1891, Dogs Trust (formerly the National Canine Defence League) is the largest dog welfare charity in the UK. Their mission is to bring about the day when all dogs can enjoy a happy life, free from the threat of unnecessary destruction.</p>
+							</div>
+
+							<div class="col-md-3 col-sm-6 about-icon">
+								<a href="http://www.wetnoseanimalaid.com/">
+									<img src="img/partners/wetnoseanimalaid.jpg">
+								</a>
+								<h4>Wetnose Animal Aid</h4>
+								<p>Wetnose pay off vets bills and buy essential equipment for sick and vulnerable animals.</p>
+							</div>
+
+							<div class="col-md-3 col-sm-6 about-icon">
+								<a href="http://www.animalprotection.se/english/">
+									<img src="img/partners/APN_logo.gif">
+								</a>
+								<h4>Animal Protection Network</h4>
+								<p>Animal Protection Network is a Swedish non-profit organization with the primary purpose of ending the abuse of cats and dogs in Asia</p>
+							</div>
+
+							<div class="col-md-3 col-sm-6 about-icon">
+								<a href="http://www.naturallyhappydogs.com/">
+									<img src="img/partners/naturally-happy-dogs.jpg">
+								</a>
+								<h4>Naturally Happy Dogs</h4>
+								<p>Naturally happy dogs is the online dog video magazine</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane" id="people">
+						<!-- begin Team -->
+						<article class="team separator">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="team-item" style="background-image: url('../img/background-trail.svg');background-size: cover;">
+										<figure class="center-block"><img src="img/sweety_boss.jpg"></figure>
+										<h4>Charles Wartenberg</h4>
+										<h5>Chief Executive Officer</h5>
+										<p>Charles Wartenberg has worked in animal welfare for over 40 years and has been involved with IWCT for over 20 years.</p><p>IWCT's involvement with trying to bring an end to the illegal dog meat trade in the Philippines began when Charles first visited the Philippines in November 1998. Arriving in a country without any grasp of the language he was determined to do something to help the plight of the poor dogs being savagely killed for the dinner table. In the early years Charles managed to turn Filipino journalists into investigators, looking into world of the illegal dog meat trade to identify the wicked perpetrators. Raids on illegal slaughterhouses, restaurants and markets selling dog meat, as well as seizures of vehicles transporting dogs for slaughter were successfully carried out and this has led to many arrests and convictions and of course the rescue of thousands of dogs.</p><p>In 2006 he was instrumental in the building and opening of the AKF Rescue_Centre in the Philippines. Charles splits his time between the Philippines and England and even brought one of the dogs he saved, a 4 month puppy rescued from a slaughterhouse just moments before death, home to live in the UK with him and his wife, they named him Sweet and he's now 14. When Charles first started his work in the Philippines approximately 500,000 dogs were believed to be being illegally slaughtered for meat and Charles is hoping that very soon he will be able to see the end of the trade altogether.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4 col-sm-6">
+									<div class="team-item">
+
+										<h4>John Hawkridge</h4>
+										<h5>Chairman of trustees</h5>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-6">
+									<div class="team-item">
+
+										<h4>David Mills</h4>
+										<h5>Trustee</h5>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-6">
+									<div class="team-item">
+
+										<h4>John Masters</h4>
+										<h5>Trustee</h5>
+									</div>
+								</div>
+							</div>
+
+						</article>
+						<!-- end Team -->
+
+					</div>
+				</div>
+		</article>
+
+
+		<article class="contacts inverted" id="contacts">
+			<div class="container">
+				<h2 class="inverted">Contact Us</h2>
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="inverted">International Wildlife Coalition Trust (IWCT)</h3>
+						<p class="text-center inverted">
+							141A High Street
+							<br>Edenbridge
+							<br>Kent TN8 5AX
+							<br><i class="icon-phone"></i> 01732 866955
+							<br><i class="icon-mail"></i> <a href="mailto:info@iwct-uk.org">info@iwct-uk.org</a>
+							<br><i class="icon-globe"></i> <a href="https://www.iwct-uk.org">www.iwct-uk.org</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</article>
+
+	</section>
+	<!-- end Content -->
+
+	<div class="container">
+		<div class="row iwct-social">
+			<div class="col-md-6">
+				<iwct-newsletter></iwct-newsletter>
+			</div>
+			<div class="iwct-twitter  col-md-3">
+				<div id="fb-root"></div>
+				<a class="twitter-timeline" href="https://twitter.com/IWCTUK" width=100% height=300px data-widget-id="478824195346812929">Tweets by @IWCTUK</a>
+				<script>
+					! function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0],
+							p = /^http:/.test(d.location) ? 'http' : 'https';
+						if (!d.getElementById(id)) {
+							js = d.createElement(s);
+							js.id = id;
+							js.src = p + "://platform.twitter.com/widgets.js";
+							fjs.parentNode.insertBefore(js, fjs);
+						}
+					}(document, "script", "twitter-wjs");
+				</script>
+
+			</div>
+
+			<div class="iwct-facebook col-md-3">
+
+				<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fiwctuk&amp;width=300&amp;height=300&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=false&amp;appId=321970504652378"
+				scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:300px;" allowTransparency="true"></iframe>
+			</div>
+		</div>
+	</div>
+	<iwct-footer>
+	</iwct-footer>
+
+
+	<!-- ******************************************************************** -->
+	<!-- ************************* Javascript Files ************************* -->
+
+	<!-- jQuery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Import AngularJS -->
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="js/ui-bootstrap-tpls-0.12.0.min.js"></script>
+
+	<!-- Respond.js media queries for IE8 -->
+	<script src="js/vendors/respond.min.js"></script>
+
+	<!-- Bootstrap-->
+	<script src="js/vendors/bootstrap.min.js"></script>
+
+
+	<script src="js/vendors/jquery/jquery.nav.min.js"></script>
+
+	<!-- bxSlider Javascript file -->
+	<script src="js/vendors/bxslider/jquery.bxslider.min.js"></script>
+
+	<!-- Placeholder.js -->
+	<!--[if lte IE 9]> <script src="js/vendors/placeholder.js" ></script> <script>Placeholder.init();</script> <![endif]-->
+
+	<!-- Custom -->
+	<script src="js/script.min.js"></script>
+
+	<!-- *********************** End Javascript Files *********************** -->
+	<!-- ******************************************************************** -->
+	<script>
+		function startbxSlider() {
+		$('.bxslider').bxSlider({
+			auto: true,
+			autoHover: false,
+			autoStart:true,
+			pager: false,
+			controls: false,
+			speed:1000,
+			pause:5000,
+			adaptiveHeight:true	
+		});
+	}
+
+	$(document).ready(function() {
+		if ($('.bxslider').length > 0) {
+			startbxSlider();
+		}
+	});
+	
+	
+	</script>
+
+</body>
+
+</html>

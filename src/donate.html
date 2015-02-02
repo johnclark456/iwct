@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<!-- Define Charset -->
+	<meta charset="utf-8" />
+
+	<!-- Page Title -->
+	<title>Donate - IWCT </title>
+
+	<!-- Responsive Metatag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=9" />-->
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+
+	<!-- bxSlider CSS file -->
+	<link href="js/vendors/bxslider/jquery.bxslider.css" rel="stylesheet" />
+
+	<!-- Font icons -->
+	<link rel="stylesheet" href="css/vendors/fontello.min.css">
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="css/fontello-ie7.css" ><![endif]-->
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/styles.min.css" />
+
+	<!-- Custom Media-Queties -->
+	<link rel="stylesheet" href="css/media-queries.min.css" />
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Media queries -->
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	
+	</head>
+
+	<body data-ng-app="iwct">
+		<!-- begin Header -->
+		<header id="home">
+			<iwct-navbar></iwct-navbar>
+			<div class="container">
+				<h1>Donate Now</h1>
+			</div>
+
+		</header>
+		<!-- end Header -->
+
+		<!-- begin Content -->
+		<section>
+			<div class="container">
+
+
+				<div class="row">
+					<div class="col-md-8">
+						<article class="donations">
+							<p>However much you give you’ll be making such a difference to help the rescued dogs and bring an end to this horrifically cruel trade</p>
+							<div class="col-md-6 col-sm-6">
+								<!--<a class="btn btn-make-donation" onClick="$('#singleDonate').removeClass('hide');$('#recurringDonate').addClass('hide');">-->
+								<a class="btn btn-make-donation" onClick="document.getElementById('recurringDonate').className = 'hide';document.getElementById('singleDonate').className = '';">
+									One Off Donation
+									</a>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<a class="btn btn-make-donation" onClick="document.getElementById('singleDonate').className = 'hide';document.getElementById('recurringDonate').className = '';">
+									Regular Donation
+									</a>
+							</div>
+							<div class="col-md-12 hide" id="singleDonate">
+								<!--<script type="text/JavaScript" src="//app.etapestry.com/hosted/eTapestry.com/etapEmbedResponsiveResizing.js"></script>-->
+								<iframe id="etapIframe" style="border:none;width:100%;height:1750px" src="https://app.etapestry.com/onlineforms/InternationalWildlifeCoalitio/singleDonation.html"></iframe>
+							</div>
+							
+							<div class="col-md-12 hide" id="recurringDonate">
+								<!--<script type="text/JavaScript" src="//app.etapestry.com/hosted/eTapestry.com/etapEmbedResponsiveResizing.js"></script>-->
+								<iframe id="etapIframe" style="border:none;width:100%;height:1770px" src="https://app.etapestry.com/onlineforms/InternationalWildlifeCoalitio/recurringDonation.html"></iframe>
+							</div>
+						</article>
+						<div class="donate-amounts">
+							<h3>What your money can buy</h3>
+							<div class="col-md-4 col-sm-4">
+								<div class="donation-item">
+									<h3>£5</h3>
+									<p>will provide a vital vaccination treatment for a rescued dog</p>
+								</div>
+							</div>
+
+							<div class="col-md-4 col-sm-4">
+								<div class="donation-item">
+									<h3>£10</h3>
+									<p>will feed a rescued dog for a month</p>
+								</div>
+							</div>
+
+							<div class="col-md-4 col-sm-4">
+								<div class="donation-item">
+									<h3>£20</h3>
+									<p>will cover the cost of neutering 2 rescued dogs</p>
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								<div id="newsSlider" class="hide">
+									<ul class="bxslider">
+										<li>
+											<h3>Craig's Story</h3>
+											<div class="col-md-4">
+												<img src="img_resp/news/Craig-small.jpg" srcset="img_resp/news/Craig-small.jpg 320w, img_resp/news/Craig-medium.jpg 640w, img_resp/news/Craig-large.jpg 1024w" style="box-shadow: 0 0 10px #000">
+											</div>
+											<div class="col-md-8">
+												<p>We found Craig, thin and scared, cowering in a locked cage awaiting his fate at the hands of cruel dog meat traders.</p>
+												<p>He was brought back to the Rescue_Centre and almost immediately began to wag his tail and he hasn't stopped wagging it since. He's a happy and caring dog, with an incredibly trusting nature, given what he's been through and it wasn't a surprise
+													when a family chose him at one of our Adoption Days in November, apparently it was his wagging tail that they fell in love with!</p>
+											</div>
+										</li>
+										<li>
+											<h3>Eliot's Story</h3>
+											<div class="col-md-4">
+												<img src="img_resp/sponsor/Eliot-small.jpg" srcset="img_resp/sponsor/Eliot-small.jpg 320w, img_resp/sponsor/Eliot-medium.jpg 640w, img_resp/sponsor/Eliot-large.jpg 1024w" style="box-shadow: 0 0 10px #000">
+											</div>
+											<div class="col-md-8">
+												<p>
+													Eliot was rescued in the summer of 2014 from a makeshift slaughterhouse, along with 2 other dogs and all 3 dogs were either chained or bound by the muzzle.</p>
+												<p>When we rescued Eliot, he was only 9 1/2 kg, which was very underweight for a dog of his size. He soon put the weight on and turned out to be a very playful, active dogs, who loves his walks (and runs). Not surprisingly he was adopted at the
+													end of last year and this playful young chap is now part of a new and loving family.</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-4">
+						<figure>
+							<img src="img_resp/DSCF1297-small.JPG" srcset="img_resp/DSCF1297-small.JPG 320w, img_resp/DSCF1297-medium.JPG 640w, img_resp/DSCF1297-large.JPG 1024w">
+						</figure>
+
+
+
+						<div class="col-md-12 donation-item" style="max-width:100%; border-color:#4b6e86">
+							<h4>Give as you Live</h4>
+							<p>Did you know that you can help raise funds for IWCT simply by shopping on-line? It’s so easy to register with Give as you Live, it’s free and really quick, and once you’ve done it they will donate a percentage of every you spend on-line to IWCT!</p>
+							<a href="http://www.giveasyoulive.com/join/international-wildlife-coalition-trust/148772/136198" target="_blank">
+								<figure>
+									<img class="img-responsive" src="img/new-banner-generic2.jpg" style="width:230px;margin:auto">
+								</figure>
+							</a>
+						</div>
+
+
+					</div>
+				</div>
+
+
+
+				<div class="col-md-offset-3 col-md-6">
+					<h4>Postal donation</h4>
+					<p>If you would like to send a donation to IWCT by post, please download and complete a donation form by clicking <a href="img/donations/standing-order.pdf">here</a>.</p>
+					<p>
+						Please send your donation to:
+						<br/> IWCT
+						<br/> 141a High Street
+						<br/> Edenbridge
+						<br/> Kent TN8 5AX
+						<br/> Cheques should be made payable to IWCT
+					</p>
+				</div>
+
+			</div>
+			<a href="https://www.positivessl.com" style="font-family: arial; font-size: 10px; color: #212121; text-decoration: none;float:right"><img src="https://www.positivessl.com/images-new/PositiveSSL_tl_trans.png" alt="Positive SSL" title="Positive SSL" border="0" /></a>
+		</section>
+		<!-- end Content -->
+		
+
+		<iwct-footer></iwct-footer>
+
+		<!-- ******************************************************************** -->
+		<!-- ************************* Javascript Files ************************* -->
+
+		 <!--jQuery -->
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		 <!--Import AngularJS -->
+		
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="js/ui-bootstrap-tpls-0.12.0.min.js"></script>
+
+		 <!--Respond.js media queries for IE8 -->
+		<script type="text/javascript" src="js/vendors/respond.min.js"></script>
+
+		 <!--Bootstrap-->
+		<script type="text/javascript" src="js/vendors/bootstrap.min.js"></script>
+
+		 <!--bxSlider Javascript file -->
+		<script type="text/javascript" src="js/vendors/bxslider/jquery.bxslider.min.js"></script>
+		 <!--Placeholder.js -->
+		<!--[if lte IE 9]> <script src="js/vendors/placeholder.js" ></script> <script>Placeholder.init();</script> <![endif]-->
+
+		<script type="text/javascript" src="js/vendors/jquery/jquery.nav.min.js"></script>
+
+		 <!--Custom -->
+		<script type="text/javascript" src="js/script.min.js"></script>
+
+		<!-- *********************** End Javascript Files *********************** -->
+		<!-- ******************************************************************** -->
+		<script>
+			function startbxSlider() {
+				document.getElementById('newsSlider').className = 'newsSlider';
+				$('.bxslider').bxSlider({
+					auto: true,
+					autoHover: true,
+					autoStart: true,
+					pager: true,
+					controls: false,
+					speed: 1000,
+					pause: 10000,
+					adaptiveHeight: false
+				});
+			}
+
+			$(document).ready(function() {
+				if ($('.bxslider').length > 0) {
+					startbxSlider();
+				}
+			});
+		</script>
+
+	</body>
+
+</html>

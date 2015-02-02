@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="adoptDialog">
+		<div class="col-md-12">
+			<figure class="center-block" style="max-width:100%;margin-top:10px">
+				<img data-ng-src="{{selectedDog.image}}-medium.jpg" data-ng-srcset="{{selectedDog.image}}-small.jpg 320w, {{selectedDog.image}}-medium.jpg 640w, {{selectedDog.image}}-large.jpg 1024w">
+			</figure>
+		</div>
+		<div class="col-md-12">
+			<h3>
+					{{selectedDog.name}}
+				</h3>
+		</div>
+		<div class="col-md-12">
+			<p>{{selectedDog.description}}</p>
+			<!--<p>Your details:</p>-->
+			<!--<form action="contact-form.php">-->
+			<!--	<div class="row">-->
+			<!--		<div class="col-sm-12">-->
+			<!--			<div class="form-group">-->
+			<!--				<label for="name" class="sr-only">Name</label>-->
+			<!--				<i class="icon-user"><input type="text" class="form-control" id="name" placeholder="Name" /></i>-->
+			<!--			</div>-->
+			<!--			<div class="form-group">-->
+			<!--				<label for="email" class="sr-only">Email</label>-->
+			<!--				<i class="icon-mail"><input type="email" class="form-control" id="email" placeholder="Email" data-ng-model="emailAddress" /></i>-->
+			<!--			</div>-->
+			<!--			<div class="form-group">-->
+			<!--				<label for="phone" class="sr-only">Phone number</label>-->
+			<!--				<i class="icon-phone"><input type="number" class="form-control" id="phone" placeholder="Phone number" /></i>-->
+			<!--			</div>-->
+			<!--		</div>-->
+			<!--	</div>-->
+			<!--	<input type="submit" class="btn btn-form" value="Sponsor">-->
+			<!--</form>-->
+		</div>
+		<div class="modal-footer">
+			<a class="btn btn-donation center-block" href="donate" style="margin:auto">Donate</a>
+			<button class="btn btn-primary" data-ng-click="ok()">Close</button>
+		</div>
+	</div>
+</div>
