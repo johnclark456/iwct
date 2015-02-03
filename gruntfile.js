@@ -61,7 +61,7 @@ module.exports = function(grunt) {
     uncss: {
       dist: {
         files: {
-          'dist/css/styles.css': '*.html'
+          'css/styles.css': '*.html'
         }
       }
     },
@@ -84,20 +84,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          src: ['js/vendors/**'],
-          dest: 'dist/'
-        }, {
-          expand: true,
-          src: ['css/vendors/**'],
-          dest: 'dist/'
-        }, {
-          expand: true,
-          src: ['*.json'],
-          dest: 'dist/'
-        }, {
-          expand: true,
-          src: ['*.php'],
-          dest: 'dist/'
+          cwd: 'src/',
+          src: ['*.php','*.json'],
+          dest: './'
         }]
       }
     }
@@ -114,6 +103,7 @@ module.exports = function(grunt) {
 
 
 
-  grunt.registerTask('all', ['newer:responsive_images:dist', 'newer:imagemin:dist', 'htmlmin', 'uglify', 'uncss', 'pleeease', 'copy']);
-  grunt.registerTask('html', ['htmlmin', 'uglify', 'cssmin']);
+  grunt.registerTask('all', ['responsive_images:dist', 'newer:imagemin:dist', 'htmlmin', 'uglify', 'uncss', 'cssmin', 'copy']);
+  grunt.registerTask('html', ['htmlmin', 'uglify', 'cssmin', 'copy']);
+  grunt.registerTask('images', ['responsive_images:dist', 'newer:imagemin:dist']);
 };
