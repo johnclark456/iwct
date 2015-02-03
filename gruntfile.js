@@ -3,10 +3,13 @@ module.exports = function(grunt) {
   grunt.initConfig({
     responsive_images: {
       dist: {
+        options: {
+          newFilesOnly: true
+        },
         files: [{
           expand: true,
           cwd: 'img',
-          src: ['./tales/*.{jpg,gif,png,JPG}'],
+          src: ['./**/*.{jpg,gif,png,JPG}'],
           dest: 'img_resp'
         }]
       }
@@ -65,24 +68,15 @@ module.exports = function(grunt) {
     imagemin: {
       dist: {
         files: [
-        // {
-        //   expand: true,
-        //   src: ['img/*.svg'],
-        //   dest: './'
-        // }, {
-        //   expand: true,
-        //   src: ['img/*.{png,jpg,JPG,gif}'],
-        //   dest: './'
-        // }, {
-        //   expand: true,
-        //   src: ['img_resp/**/*.{png,jpg,JPG}'],
-        //   dest: './'
-        // }
-        {
-          expand: true,
-          src: ['img_resp/tales/*.{png,jpg,JPG}'],
-          dest: './'
-        }
+         {
+           expand: true,
+           src: ['img/*.{svg,png,jpg,JPG,gif}'],
+           dest: './'
+         }, {
+           expand: true,
+           src: ['img_resp/**/*.{png,jpg,JPG,gif,svg}'],
+           dest: './'
+         }
         ]
       }
     },
