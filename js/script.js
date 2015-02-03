@@ -9,87 +9,7 @@
 	 */
 	"use strict";
 
-	/***********************************************************************/
-	/*****************************  $Content  ******************************/
-	/**
-	* + Content
-	* + Collapse Icon
-	* + Donations Steps
-	* + Fancybox
-	* + Select Amount
-	* + Send Forms
-	* + Tabs
-	* + Tootips
-
-	*/
-
-	/***************************  $Collapse Icon  **************************/
-	function changeIcon(e, icons) {
-		var $emt = $(e.target).parents('.panel'),
-			$ico = $emt.find('h4 a i'),
-			evt = e.type,
-			isIn = ($emt.find('.panel-collapse').hasClass('in')),
-			icoClosed = icons[0], //icon when panel is close
-			icoOpen = icons[1], //icon when panel is open
-			icoHover = icons[2]; //icon when panel is hover
-
-		$ico.removeClass();
-
-		if (evt == 'show') {
-			$ico.addClass(icoOpen);
-		}
-		else if (evt == 'hide') {
-			$ico.addClass(icoClosed);
-		}
-		else if (evt == 'mouseenter') {
-			$ico.addClass(icoHover);
-		}
-		else if (evt == 'mouseleave') {
-			(isIn) ? $ico.addClass(icoOpen): $ico.addClass(icoClosed);
-		}
-	}
-
-	function bindChangeIcon(collapse, heading, icons) {
-		collapse.on('hide.bs.collapse', function(e) {
-			changeIcon(e, icons);
-		});
-		collapse.on('show.bs.collapse', function(e) {
-			changeIcon(e, icons);
-		});
-		heading.on('mouseenter', function(e) {
-			changeIcon(e, icons);
-		});
-		heading.on('mouseleave', function(e) {
-			changeIcon(e, icons);
-		});
-	}
-
-	var $collapse = $('#accordion-work'),
-		$heading = $collapse.find('.panel-heading'),
-		icons = ['icon-down-circled', 'icon-up-circled', 'icon-down-circled'];
-
-	bindChangeIcon($collapse, $heading, icons);
-
-	/**************************  $Donations Steps  *************************/
-	$('.btn-tab-action').click(function(e) {
-		e.preventDefault();
-		$('#donation-steps a[href="' + $(this).attr('href') + '"]').tab('show');
-	});
-
-
-	/****************************  $Fancybox  *******************************/
-	if ($('.fancybox').length) {
-		$('a[data-rel]').each(function() {
-			$(this).attr('rel', $(this).data('rel'));
-		});
-
-		$(".fancybox").fancybox({
-			openEffect: 'none',
-			closeEffect: 'none'
-		});
-	}
-
-	/***************************  $Menu Sticky  ****************************/
+	/*************************** $Menu Sticky ****************************/
 
 	$(window).scroll(function() {
 		var $head = $('body > header'),
@@ -116,102 +36,14 @@
 
 
 
-	/*************************  $One Page Scroll  **************************/
+	/************************* $One Page Scroll **************************/
 	$('.navbar-nav').onePageNav({
 		currentClass: 'active',
 		filter: ':not(.exclude)',
 	});
 
 
-
-	/***************************  $Select Amount  **************************/
-	$('.amount .radio').click(function(e) {
-		var val = $('[name=amountRadio]:checked').val();
-
-		$('.amount .radio').removeClass('active');
-		$(this).addClass('active');
-
-		if (val == 'other') {
-			$('#amount-other').show();
-		}
-		else {
-			$('#amount-other').hide();
-
-		}
-	});
-
-
-
-	/**************************  $Send Forms  ******************************/
-	var $form = $('form');
-
-	$form.on('submit', function(e) {
-		if ($(this).data('ajax') == 1) {
-			e.preventDefault();
-			sendForm($(this));
-		}
-	});
-
-	function sendForm($form) {
-		var fieldsData = getFieldsData($form),
-			url = $form.attr('action'),
-			method = $form.attr('method');
-
-		sendData(url, method, fieldsData, $form, showResults);
-	}
-
-
-	function getFieldsData($form) {
-		var $fields = $form.find('input, button, textarea, select'),
-			fieldsData = {};
-
-		$fields.each(function() {
-			var name = $(this).attr('name'),
-				val = $(this).val(),
-				type = $(this).attr('type');
-
-			if (typeof name !== 'undefined') {
-
-				if (type == 'checkbox' || type == 'radio') {
-
-					if ($(this).is(':checked')) {
-						fieldsData[name] = val;
-					}
-				}
-				else {
-					fieldsData[name] = val;
-				}
-
-			}
-		});
-
-		return fieldsData;
-	}
-
-	function sendData(url, method, data, $form, callback) {
-		var $btn = $form.find('[type=submit]'),
-			$response = $form.find('.form-response');
-
-		$.ajax({
-			beforeSend: function(objeto) {
-				$response.html('');
-			},
-			complete: function(objeto, exito) {},
-			data: data,
-			success: function(dat) {
-				callback(dat, $response);
-			},
-			type: method,
-			url: url,
-		});
-	}
-
-	function showResults(data, $response) {
-		$response.html(data);
-		$response.find('.alert').slideDown('slow');
-	}
-
-	/*******************************  $Tabs  *******************************/
+	/******************************* $Tabs *******************************/
 	$('.nav-tabs a').click(function(e) {
 		e.preventDefault();
 		$(this).tab('show');
@@ -219,37 +51,8 @@
 
 
 
-	/*****************************  $Tootips  ******************************/
-	function changeTooltipColorTo(color) {
-		//solution from: http://stackoverflow.com/questions/12639708/modifying-twitter-bootstraps-tooltip-colors-based-on-position
-		$('.tooltip-inner').css('background-color', color);
-		$('.tooltip.top .tooltip-arrow').css('border-top-color', color);
-		$('.tooltip.right .tooltip-arrow').css('border-right-color', color);
-		$('.tooltip.left .tooltip-arrow').css('border-left-color', color);
-		$('.tooltip.bottom .tooltip-arrow').css('border-bottom-color', color);
-	}
-
-	$('.donation-item .progress-bar').tooltip({
-		placement: 'top'
-	});
-	$('.donation-item .progress-bar').hover(function() {
-		changeTooltipColorTo('#d91d2b');
-	});
-
-
 
 })(jQuery);
-
-function doDonationSubmit() {
-
-	var j = $('input[name="amountRadio"]:checked').val();
-
-	if (j == "other")
-		j = $("#amount-other").val();
-
-	$('#amountField').val(j);
-	return true;
-}
 
 
 (function() {
@@ -384,7 +187,7 @@ function doDonationSubmit() {
 				var end = $scope.begin + $scope.numPerPage;
 				$scope.filteredNews = $scope.news.slice($scope.begin, end);
 			});
-			
+
 			$scope.shareNews = function() {
 				FB.ui({
 					method: 'share',
@@ -393,6 +196,42 @@ function doDonationSubmit() {
 			};
 		}
 	]);
+
+	app.controller("dogTalesController", ['$scope', '$http',
+		function($scope, $http) {
+			$scope.dogTales = [];
+			$http.get('tales.json').success(function(data, status, headers, config) {
+				$scope.dogTales = data;
+			});
+
+			$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+				document.getElementById('newsSlider').className = 'newsSlider';
+				$('.bxslider').bxSlider({
+					auto: true,
+					autoHover: true,
+					autoStart: true,
+					pager: true,
+					controls: false,
+					speed: 1000,
+					pause: 10000,
+					adaptiveHeight: false
+				});
+			});
+		}
+	]);
+
+	app.directive('onFinishRender', function($timeout) {
+		return {
+			restrict: 'A',
+			link: function(scope, element, attr) {
+				if (scope.$last === true) {
+					$timeout(function() {
+						scope.$emit(attr.onFinishRender);
+					});
+				}
+			}
+		}
+	});
 
 	app.controller("adoptController", ['$scope', '$modal', '$http',
 		function($scope, $modal, $http) {
@@ -431,9 +270,9 @@ function doDonationSubmit() {
 
 		}
 	]);
-	
+
 	app.filter('escape', function() {
-  	return window.encodeURIComponent;
+		return window.encodeURIComponent;
 	});
 
 	app.controller("ModalInstanceCtrl", ['$scope', '$modalInstance', '$log', 'selectedDog',

@@ -107,29 +107,14 @@
 							</div>
 
 							<div class="col-md-12">
-								<div id="newsSlider" class="hide">
+								<div id="newsSlider" class="hide" data-ng-controller="dogTalesController">
 									<ul class="bxslider">
-										<li>
-											<h3>Craig's Story</h3>
+										<li data-ng-repeat="tale in dogTales" on-finish-render="ngRepeatFinished">
+											<h3>{{tale.name}}</h3>
 											<div class="col-md-4">
-												<img src="img_resp/news/Craig-small.jpg" srcset="img_resp/news/Craig-small.jpg 320w, img_resp/news/Craig-medium.jpg 640w, img_resp/news/Craig-large.jpg 1024w" style="box-shadow: 0 0 10px #000">
+												<img data-ng-src="{{tale.image}}-medium.jpg" data-ng-srcset="{{tale.image}}-small.jpg 320w, {{tale.image}}-medium.jpg 640w, {{tale.image}}-large.jpg 1024w" style="box-shadow: 0 0 10px #000">
 											</div>
-											<div class="col-md-8">
-												<p>We found Craig, thin and scared, cowering in a locked cage awaiting his fate at the hands of cruel dog meat traders.</p>
-												<p>He was brought back to the Rescue_Centre and almost immediately began to wag his tail and he hasn't stopped wagging it since. He's a happy and caring dog, with an incredibly trusting nature, given what he's been through and it wasn't a surprise
-													when a family chose him at one of our Adoption Days in November, apparently it was his wagging tail that they fell in love with!</p>
-											</div>
-										</li>
-										<li>
-											<h3>Eliot's Story</h3>
-											<div class="col-md-4">
-												<img src="img_resp/sponsor/Eliot-small.jpg" srcset="img_resp/sponsor/Eliot-small.jpg 320w, img_resp/sponsor/Eliot-medium.jpg 640w, img_resp/sponsor/Eliot-large.jpg 1024w" style="box-shadow: 0 0 10px #000">
-											</div>
-											<div class="col-md-8">
-												<p>
-													Eliot was rescued in the summer of 2014 from a makeshift slaughterhouse, along with 2 other dogs and all 3 dogs were either chained or bound by the muzzle.</p>
-												<p>When we rescued Eliot, he was only 9 1/2 kg, which was very underweight for a dog of his size. He soon put the weight on and turned out to be a very playful, active dogs, who loves his walks (and runs). Not surprisingly he was adopted at the
-													end of last year and this playful young chap is now part of a new and loving family.</p>
+											<div class="col-md-8" data-ng-bind-html="tale.description">
 											</div>
 										</li>
 									</ul>
@@ -211,27 +196,6 @@
 
 		<!-- *********************** End Javascript Files *********************** -->
 		<!-- ******************************************************************** -->
-		<script>
-			function startbxSlider() {
-				document.getElementById('newsSlider').className = 'newsSlider';
-				$('.bxslider').bxSlider({
-					auto: true,
-					autoHover: true,
-					autoStart: true,
-					pager: true,
-					controls: false,
-					speed: 1000,
-					pause: 10000,
-					adaptiveHeight: false
-				});
-			}
-
-			$(document).ready(function() {
-				if ($('.bxslider').length > 0) {
-					startbxSlider();
-				}
-			});
-		</script>
 
 	</body>
 
