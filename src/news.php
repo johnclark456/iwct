@@ -63,7 +63,6 @@
 				<div class="news news-single" style="background:#fff">
 					<aside class="share">
 						Share this story on:
-						<div class="clearfix visible-xs"></div>
 						<a data-ng-href="https://twitter.com/share?url=https%3A%2F%2Fwww.iwct-uk.org%2Fnews.php%3Ftag%3D{{newsArticle.tag}}&text={{newsArticle.title|escape}}"><i class="icon-twitter"></i></a>
 
 						<a href="" ng-click="shareNews();">
