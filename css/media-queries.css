@@ -1,7 +1,7 @@
 @media handheld,
 only screen and (max-width: 1199px) {
   .bannercontainer p {
-    font-size: 45px
+    font-size: 30px
   }
   .btn.btn-slider {
     padding: 10px 30px
