@@ -17,10 +17,11 @@
   <!DOCTYPE html>
     <html>
         <head>
+            <meta charset="utf-8" /> 
             <meta property="og:title" content="<?php echo $title; ?>" />
             <meta property="og:image" content="<?php echo $image; ?>" />
             <!-- etc. -->
-            <link rel="canonical" href=<? echo "https://www.iwct-uk.org/news.php?tag=" . htmlspecialchars($_GET["tag"])?>>
+            <link rel="canonical" href="<? echo "https://www.iwct-uk.org/news.php?tag=" . htmlspecialchars($_GET["tag"])?>">
         </head>
         <body>
             <p><?php echo $description; ?></p>

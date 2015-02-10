@@ -34,7 +34,7 @@
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
 	
-	<meta property="og:url" content=<? echo "https://www.iwct-uk.org/social_news.php?tag=" . htmlspecialchars($_GET["tag"])?>>
+	<meta property="og:url" content="<? echo "https://www.iwct-uk.org/social_news.php?tag=" . htmlspecialchars($_GET["tag"])?>">
 
 </head>
 
@@ -65,7 +65,7 @@
 						Share this story on:
 						<a data-ng-href="https://twitter.com/share?url=https%3A%2F%2Fwww.iwct-uk.org%2Fnews.php%3Ftag%3D{{newsArticle.tag}}&text={{newsArticle.title|escape}}"><i class="icon-twitter"></i></a>
 
-						<a href="" ng-click="shareNews();">
+						<a href="" data-ng-click="shareNews();">
 							<i class="icon-facebook"></i>
 						</a>
 						<!--<a  ng-href="https://plus.google.com/share?url=https%3A%2F%2Fwww.iwct-uk.org%2Fnews.php%3Ftag%3D{{newsArticle.tag}}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="icon-gplus"></i></a>-->
