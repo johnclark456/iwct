@@ -24,4 +24,12 @@
     </div>
   </div>
 </nav>
-<script>$('.navbar-nav li a').click(function(event) {$(".navbar-collapse").removeClass('in');});</script>
+<script>
+  $('.navbar-nav li a').click(function(event) {
+    $(".navbar-collapse").removeClass('in');
+  });
+  $('.navbar-nav').onePageNav({
+    currentClass: 'active',
+    filter: ':not(.exclude)',
+  });
+</script>

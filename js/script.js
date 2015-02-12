@@ -32,17 +32,6 @@
 
 	});
 
-
-
-
-
-	/************************* $One Page Scroll **************************/
-	$('.navbar-nav').onePageNav({
-		currentClass: 'active',
-		filter: ':not(.exclude)',
-	});
-
-
 	/******************************* $Tabs *******************************/
 	$('.nav-tabs a').click(function(e) {
 		e.preventDefault();
