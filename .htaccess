@@ -425,7 +425,7 @@ ErrorDocument 404 /404.html
 
   # CSS
 
-    ExpiresByType text/css                              "access plus 1 hour"
+    ExpiresByType text/css                              "access plus 1 week"
 
 
 
@@ -469,11 +469,11 @@ ErrorDocument 404 /404.html
 
   # JavaScript
 
-    ExpiresByType application/javascript                "access plus 1 hour"
+    ExpiresByType application/javascript                "access plus 1 week"
 
-    ExpiresByType application/x-javascript              "access plus 1 hour"
+    ExpiresByType application/x-javascript              "access plus 1 week"
 
-    ExpiresByType text/javascript                       "access plus 1 hour"
+    ExpiresByType text/javascript                       "access plus 1 week"
 
 
 

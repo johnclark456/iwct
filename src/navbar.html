@@ -28,8 +28,10 @@
   $('.navbar-nav li a').click(function(event) {
     $(".navbar-collapse").removeClass('in');
   });
-  $('.navbar-nav').onePageNav({
-    currentClass: 'active',
-    filter: ':not(.exclude)',
-  });
+  if (typeof $('.navbar-nav').onePageNav === "function") {
+    $('.navbar-nav').onePageNav({
+      currentClass: 'active',
+      filter: ':not(.exclude)',
+    });
+  }
 </script>
