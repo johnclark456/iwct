@@ -42,7 +42,7 @@
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
 
-	<meta property="og:description" content="Our mission is to support and protect the welfare and rights of all animals"/>
+	<meta property="og:description" content="Our mission is to support and protect the welfare and rights of all animals" />
 
 
 
@@ -65,14 +65,14 @@
 				</li>
 
 				<li>
-					<img src="img_resp/Slider/slide02-medium.jpg" alt="//" srcset="img_resp/Slider/slide02-small.jpg 320w,img_resp/Slider/slide02-medium.jpg 640w,img_resp/Slider/slide02-large.jpg 1024w"/>
+					<img src="img_resp/Slider/slide02-medium.jpg" alt="//" srcset="img_resp/Slider/slide02-small.jpg 320w,img_resp/Slider/slide02-medium.jpg 640w,img_resp/Slider/slide02-large.jpg 1024w" />
 					<div>
 						<p>“determined to end the horrors of the dog meat trade”</p>
 					</div>
 				</li>
 
 				<li>
-					<img src="img_resp/Slider/slide01-medium.jpg" alt="//" srcset="img_resp/Slider/slide01-small.jpg 320w,img_resp/Slider/slide01-medium.jpg 640w,img_resp/Slider/slide01-large.jpg 1024w"/>
+					<img src="img_resp/Slider/slide01-medium.jpg" alt="//" srcset="img_resp/Slider/slide01-small.jpg 320w,img_resp/Slider/slide01-medium.jpg 640w,img_resp/Slider/slide01-large.jpg 1024w" />
 					<div>
 						<p>“passionate about Wildlife”</p>
 					</div>
@@ -88,9 +88,33 @@
 	<!-- begin Content -->
 	<section class="section-home">
 		<article class="inverted" id="mission">
-			<h2 class="inverted">Mission</h2>
-			<h3 class="inverted">Our mission is to support and protect the welfare and rights of all animals</h3>
-			<a href="donate" class="btn btn-slider btn-mission" style="margin-left: auto;margin-right: auto;display: block;max-width:300px">Take action now</a>
+			<div class="container">
+				<h2 class="inverted">Mission</h2>
+				<h3 class="inverted">Our mission is to support and protect the welfare and rights of all animals</h3>
+				<div class="row">
+					<div class="col-md-6 text-center inverted">
+						<h4 class="inverted">Follow us</h4>
+						<a href="https://www.facebook.com/iwctuk" target="_blank" class="large-icon-circle">
+							<i class="inverted icon-facebook"></i>
+						</a>
+
+						<a href="https://twitter.com/IWCTUK" target="_blank" class="large-icon-circle">
+							<i class="inverted icon-twitter"></i>
+						</a>
+					</div>
+					<div class="col-md-6">
+						<iwct-newsletter></iwct-newsletter>
+						<!--<p class="text-center inverted">-->
+						<!--	<a href='#' onclick='$(window).scrollTo($("#newsletter").offset().top-110,150);'>-->
+						<!--		Sign up for our newsletter-->
+						<!--	</a>-->
+						<!--</p>-->
+					</div>
+				</div>
+				<div class="row">
+					<a href="donate" class="btn btn-slider btn-mission" style="margin-left: auto;margin-right: auto;display: block;max-width:300px; margin-top:0px">Take action now</a>
+				</div>
+			</div>
 		</article>
 		<!-- begin About Us-->
 		<article class="about-us" id="about-us">
@@ -125,8 +149,8 @@
 		<!-- end About Us-->
 
 		<!-- begin News -->
-		<article class="news" id="news">
-			<div class="container" style="background: url('../img/background-trail.svg');background-size: cover;">
+		<article class="news" id="news" style="background-color:#4b6e86; background-image: url('../img/background-trail.svg');background-size: cover;">
+			<div class="container">
 				<h2>News</h2>
 				<div data-ng-controller="newsController as ctrl">
 					<div class="row" data-ng-repeat="newsRow in filteredNews" data-ng-if="$index%2==0">
@@ -264,36 +288,74 @@
 					<div class="tab-pane" id="people">
 						<!-- begin Team -->
 						<article class="team separator">
+
 							<div class="row">
 								<div class="col-md-12">
-									<div class="team-item" style="background-image: url('../img/background-trail.svg');background-size: cover;">
-										<figure class="center-block"><img src="img/sweety_boss.jpg"></figure>
-										<h4>Charles Wartenberg</h4>
-										<h5>Chief Executive Officer</h5>
-										<p>Charles Wartenberg has worked in animal welfare for over 40 years and has been involved with IWCT for over 20 years.</p><p>IWCT's involvement with trying to bring an end to the illegal dog meat trade in the Philippines began when Charles first visited the Philippines in November 1998. Arriving in a country without any grasp of the language he was determined to do something to help the plight of the poor dogs being savagely killed for the dinner table. In the early years Charles managed to turn Filipino journalists into investigators, looking into world of the illegal dog meat trade to identify the wicked perpetrators. Raids on illegal slaughterhouses, restaurants and markets selling dog meat, as well as seizures of vehicles transporting dogs for slaughter were successfully carried out and this has led to many arrests and convictions and of course the rescue of thousands of dogs.</p><p>In 2006 he was instrumental in the building and opening of the AKF Rescue Centre in the Philippines. Charles splits his time between the Philippines and England and even brought one of the dogs he saved, a 4 month puppy rescued from a slaughterhouse just moments before death, home to live in the UK with him and his wife, they named him Sweet and he's now 14. When Charles first started his work in the Philippines approximately 500,000 dogs were believed to be being illegally slaughtered for meat and Charles is hoping that very soon he will be able to see the end of the trade altogether.</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4 col-sm-6">
 									<div class="team-item">
 
 										<h4>John Hawkridge</h4>
 										<h5>Chairman of trustees</h5>
+										<p>Born in Wandsworth in 1945, he was educated at Emanuel School and the Royal Veterinary College, London, qualifying as a vet in 1969. Apart from 3 years in pharmaceutical research with Eli Lilly, he spent the majority of his career in general
+											practice in South Wales, Essex and 25 years running a large veterinary hospital and mixed practice in East Grinstead.</p>
+										<p> He has worked for the BBC on undercover investigations involving animals on the Inside Out programme and for 10 years was a trustee of Animal Care in Egypt, an equine charity working in Luxor. Since 2010, he has been head livestock vet for the
+											South of England Show Society. He is married to Joanna and has 4 adult children and 6 grandchildren and lives in Chiddingstone, Kent. They have a small herd of Sussex cattle. </p>
 									</div>
 								</div>
-								<div class="col-md-4 col-sm-6">
+								<div class="col-md-12">
 									<div class="team-item">
 
 										<h4>David Mills</h4>
 										<h5>Trustee</h5>
+										<p>For thirty years David was a successful dairy farmer with an award-winning herd of pedigree Jersey cows. With the milk industry undergoing huge changes along with the demise of the Milk Marketing Board, it was time to re-think his farming policy
+											so reluctantly the herd was sold in 1994.</p>
+										<p>Long before it became fashionable David had always been interested in conservation and British wildlife in particular. He was greatly inspired by the work those pioneering champions of conservation, Sir Peter Scott and Gerald Durrell, were doing
+											at Slimbridge and Jersey respectively and by what the controversial casino owner John Aspinal was achieving with his zoos in Kent. Having sold the cows the realisation of his second childhood dream was possible, to have his own zoo and do something
+											for conservation! The farm was slowly converted into a wildlife centre and nature reserve and opened as a visitor attraction in 2000 to raise awareness to the plight of our native wildlife.</p>
+										<p>Today the British Wildlife Centre is home to the finest collection of native wildlife in Britain with over 40 different species from tiny harvest mice to magnificent red deer, all living in large enclosures landscaped to reflect their natural
+											habitat.</p>
+										<p>A Centre of excellence where the message is Conservation through Education.</p>
 									</div>
 								</div>
-								<div class="col-md-4 col-sm-6">
+								<div class="col-md-12">
 									<div class="team-item">
 
 										<h4>John Masters</h4>
 										<h5>Trustee</h5>
+										<p>Born in the late 1940's educated at grammar school in Tunbridge Wells and the university of "Life". Studied postal course for Chartered Surveyor and qualified in 1970. Most of career spent surveying all types of property and project managing
+											substantial health care developments.</p>
+										<p>
+											Active participation throughout in animal rights demonstrations in UK, Ireland and Europe such as anti fox hunt; Canadian Seal hunt, Live animal exports from Shoreham. Still an active lobbyist in retirement. Continues to do fundraising for animal rescue
+											organisation, Silent Auctions, Sponsored walks, stalls etc. Has set up and managed 3 animal welfare charity shops.</p>
+										<p>Has four rescued collie type dogs at present who enjoy Flyball competitions.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="team-item">
+										<h4>Team in the Philippines</h4>
+										<div class="row">
+											<div class="col-md-6">
+												<figure style="width:100%">
+													<img src="img_resp/staff-medium.jpg" alt="//" srcset="img_resp/staff-small.jpg 320w,img_resp/staff-medium.jpg 640w,img_resp/staff-large.jpg 1024w" />
+												</figure>
+											</div>
+											<div class="col-md-6">
+												<figure style="width:100%">
+													<img src="img/staff2.jpg" alt="//" />
+													<!--<img src="img_resp/staff2-medium.jpg" alt="//" srcset="img_resp/staff2-small.jpg 320w,img_resp/staff2-medium.jpg 640w,img_resp/staff2-large.jpg 1024w" />-->
+												</figure>
+											</div>
+										</div>
+										<p class="text-center">
+											<br>Edward, Kennelmate & Maintenance
+											<br>Elmar, Kennelmate
+											<br>Freddie, Kennelmate
+											<br>Ener, Kennelmate
+											<br>Nora, Cook
+											<br>Rico, Veterinary & Admin Assistant
+											<br>Kevin John, Kennelmate</p>
+
 									</div>
 								</div>
 							</div>
@@ -331,7 +393,7 @@
 	<div class="container">
 		<div class="row iwct-social">
 			<div class="col-md-6">
-				<iwct-newsletter></iwct-newsletter>
+				<iwct-newsletter id="newsletter"></iwct-newsletter>
 			</div>
 			<div class="iwct-twitter  col-md-3">
 				<div id="fb-root"></div>
@@ -369,7 +431,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<!-- Import AngularJS -->
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-sanitize.min.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
 
 	<!-- Respond.js media queries for IE8 -->
@@ -383,6 +445,7 @@
 
 	<!-- bxSlider Javascript file -->
 	<script src="js/vendors/bxslider/jquery.bxslider.min.js"></script>
+	<!--<script src="js/jquery.scrollTo.min.js"></script>-->
 
 	<!-- Placeholder.js -->
 	<!--[if lte IE 9]> <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js" ></script> <script>Placeholder.init();</script> <![endif]-->
@@ -394,25 +457,23 @@
 	<!-- ******************************************************************** -->
 	<script>
 		function startbxSlider() {
-		$('.bxslider').bxSlider({
-			auto: true,
-			autoHover: false,
-			autoStart:true,
-			pager: false,
-			controls: false,
-			speed:1000,
-			pause:5000,
-			adaptiveHeight:true
-		});
-	}
-
-	$(document).ready(function() {
-		if ($('.bxslider').length > 0) {
-			startbxSlider();
+			$('.bxslider').bxSlider({
+				auto: true,
+				autoHover: false,
+				autoStart: true,
+				pager: false,
+				controls: false,
+				speed: 1000,
+				pause: 5000,
+				adaptiveHeight: true
+			});
 		}
-	});
 
-
+		$(document).ready(function() {
+			if ($('.bxslider').length > 0) {
+				startbxSlider();
+			}
+		});
 	</script>
 
 </body>
