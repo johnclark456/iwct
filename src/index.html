@@ -156,8 +156,9 @@
 					<div class="row" data-ng-repeat="newsRow in filteredNews" data-ng-if="$index%2==0">
 						<div class="col-md-6" data-ng-repeat="i in [$index,$index+1]" data-ng-if="filteredNews[i]!=null" style="padding:50px">
 							<div class="item">
-								<div class="row" ><!--style="height:300px; max-height:50vw">-->
-									<div class="col-md-12" >
+								<div class="row">
+									<!--style="height:300px; max-height:50vw">-->
+									<div class="col-md-12">
 										<figure>
 											<a data-ng-href="news.php?tag={{filteredNews[i].tag}}">
 												<img data-ng-src="{{filteredNews[i].image}}-small.jpg" data-ng-srcset="{{filteredNews[i].image}}-small.jpg 320w, {{filteredNews[i].image}}-medium.jpg 640w, {{filteredNews[i].image}}-large.jpg 1024w" class="center-block news-img">
@@ -312,7 +313,8 @@
 											at Slimbridge and Jersey respectively and by what the controversial casino owner John Aspinal was achieving with his zoos in Kent. Having sold the cows the realisation of his second childhood dream was possible, to have his own zoo and do something
 											for conservation! The farm was slowly converted into a wildlife centre and nature reserve and opened as a visitor attraction in 2000 to raise awareness to the plight of our native wildlife.</p>
 										<p>Today the British Wildlife Centre is home to the finest collection of native wildlife in Britain with over 40 different species from tiny harvest mice to magnificent red deer, all living in large enclosures landscaped to reflect their natural
-											habitat.</p>
+											habitat.
+										</p>
 										<p>A Centre of excellence where the message is Conservation through Education.</p>
 									</div>
 								</div>
@@ -339,22 +341,30 @@
 												<figure style="width:100%">
 													<img src="img_resp/staff-medium.jpg" alt="//" srcset="img_resp/staff-small.jpg 320w,img_resp/staff-medium.jpg 640w,img_resp/staff-large.jpg 1024w" />
 												</figure>
+												<p class="text-center">
+													<br>Edward - <i>Kennelmate & Maintenance</i>
+													<br>Elmar - <i>Kennelmate</i>
+													<br>Freddie - <i>Kennelmate</i>
+													<br>Ener - <i>Kennelmate</i>
+													<br>Nora - <i>Cook</i>
+													<br>Rico - <i>Veterinary & Admin Assistant</i>
+													<br>Kevin John - <i>Kennelmate</i>
+												</p>
 											</div>
 											<div class="col-md-6">
 												<figure style="width:100%">
-													<img src="img/staff2.jpg" alt="//" />
-													<!--<img src="img_resp/staff2-medium.jpg" alt="//" srcset="img_resp/staff2-small.jpg 320w,img_resp/staff2-medium.jpg 640w,img_resp/staff2-large.jpg 1024w" />-->
+													<!--<img src="img/staff2.jpg" alt="//" />-->
+													<img src="img_resp/staff2-medium.jpg" alt="//" srcset="img_resp/staff2-small.jpg 320w,img_resp/staff2-medium.jpg 640w,img_resp/staff2-large.jpg 1024w" />
 												</figure>
+												<p class="text-center">
+													<br>Greg - <i>Centre Manager</i>
+													<br>A friend of the centre
+													<br>Roland - <i>Veterinary Surgeon</i>
+													<br>Rico - <i>Veterinary & Admin Assistant</i>
+												</p>
 											</div>
 										</div>
-										<p class="text-center">
-											<br>Edward, Kennelmate & Maintenance
-											<br>Elmar, Kennelmate
-											<br>Freddie, Kennelmate
-											<br>Ener, Kennelmate
-											<br>Nora, Cook
-											<br>Rico, Veterinary & Admin Assistant
-											<br>Kevin John, Kennelmate</p>
+
 
 									</div>
 								</div>
