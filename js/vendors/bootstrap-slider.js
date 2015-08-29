@@ -92,11 +92,11 @@
 			case 'round':
 				this.handle1.addClass('round');
 				this.handle2.addClass('round');
-				break
+				break;
 			case 'triangle':
 				this.handle1.addClass('triangle');
 				this.handle2.addClass('triangle');
-				break
+				break;
 		}
 
 		if (this.range) {
@@ -284,10 +284,9 @@
 			}
 
 			this.inDrag = false;
-			if (this.over == false) {
+			if (this.over === false) {
 				this.hideTooltip();
 			}
-			this.element;
 			var val = this.calculateValue();
 			this.element
 				.trigger({
@@ -366,7 +365,7 @@
 			if (typeof option == 'string') {
 				data[option](val);
 			}
-		})
+		});
 	};
 
 	$.fn.slider.defaults = {
